@@ -1,8 +1,22 @@
-GeoLocator-REST-API
+GeoLocatorAPI
 ===================
 
-The Java-REST API for GeoLocator webservice  compatible to both Java and Android platforms. 
+The api is a wrapper for the REST webservice for GeoLocator. It uses retrofit (http://square.github.io/retrofit) to send REST requests to the webservice to be compatible with both Java and Android platform.
 
---
 
-Before using the API, it is *strongly* adviced to use the stub generator to generate the stubs located in  <code>com/tckb/geo/stubs</code> to keep consistent to the changes in the rest webservice. The usage is pretty straight forward, the main API is located at <code>com/tckb/geo/api/LocatorREST</code> 
+```java
+// Create and set the api 
+LocatorService service = LocatorREST.getAPI();
+// make rest calls using the wrapper methods
+List<Cluster> allCluster = service.getAllClusters();
+```
+
+Optionally, you can change the endpoint url and set the logging level before setting up the API
+
+```java
+LocatorREST.setEndPoint("http://webapps-tckb.rhcloud.com/GeoLocator/service/geo/");
+// Show all the debug messages
+LocatorREST.setVerboseLevel(LogLevel.FULL);
+```
+
+I've provided the library in<code>lib</code> but, before using the API, it is *strongly* adviced to use the stub generator to generate the stubs located in  <code>com/tckb/geo/stubs</code> and rebult the project to keep consistent to the changes in the rest webservice.
