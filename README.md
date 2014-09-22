@@ -1,7 +1,7 @@
 GeoLocatorAPI
 ===================
 
-The api is a wrapper for the REST webservice for GeoLocator. It uses [retrofit] (http://square.github.io/retrofit) to send REST requests to the webservice to be compatible with both Java and Android platform.
+The api is a wrapper for the REST webservice for [GeoLocator](https://github.com/tckb/GeoLocator.pub). It uses [retrofit] (http://square.github.io/retrofit) to send REST requests to the webservice to be compatible with both Java and Android platform.
 
 -----
 
