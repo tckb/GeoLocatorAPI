@@ -5,6 +5,9 @@ The api is a wrapper for the REST webservice for [GeoLocator](https://github.com
 
 -----
 
+Current endpoint adress : http://webapps-tckb.rhcloud.com/GeoLocator/service/geo
+
+
 ```java
 // Create and set the api 
 LocatorService service = LocatorREST.getAPI();

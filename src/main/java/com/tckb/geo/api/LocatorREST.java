@@ -10,15 +10,15 @@ import retrofit.RestAdapter.LogLevel;
 
 
 /**
- *
  * @author tckb <chandra.tungathurthi@rwth-aachen.de>
  */
+
 public class LocatorREST {
 
+    //TODO : Do not store the endpoint here
     private static String endPoint = "http://webapps-tckb.rhcloud.com/GeoLocator/service/geo";
     private static LocatorService remoteService;
     private static LogLevel level = LogLevel.NONE;
-    
 
     public static LocatorService getAPI() {
         remoteService = new RestAdapter.Builder()
@@ -30,12 +30,13 @@ public class LocatorREST {
         return remoteService;
     }
 
+
     public static void setEndPoint(String url) {
         endPoint = url;
     }
 
-    public static void setVerboseLevel(LogLevel l) {
-        level = l;
+    public static void setVerboseLevel(LogLevel logLevel) {
+        level = logLevel;
     }
 
 }

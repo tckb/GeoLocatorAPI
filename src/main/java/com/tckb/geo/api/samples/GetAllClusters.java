@@ -9,20 +9,22 @@ import com.tckb.geo.api.LocatorREST;
 import com.tckb.geo.api.LocatorService;
 import com.tckb.geo.stubs.Cluster;
 import com.tckb.geo.stubs.Location;
+
 import java.util.List;
+
 import retrofit.RestAdapter.LogLevel;
 
 /**
- *
  * @author tckb <chandra.tungathurthi@rwth-aachen.de>
  */
 public class GetAllClusters {
 
     // Setup the api parameters
     static {
-        LocatorREST.setEndPoint("http://webapps-tckb.rhcloud.com/GeoLocator/service/geo/");
-        // Show all the debug messages
-        LocatorREST.setVerboseLevel(LogLevel.FULL);
+       // Configure the Endpoint, this step is NOT necessary since there is default endpoint
+//        LocatorREST.setEndPoint("http://webapps-tckb.rhcloud.com/GeoLocator/service/geo/");
+            // Show all the debug messages
+            LocatorREST.setVerboseLevel(LogLevel.FULL);
     }
 
     // Get the API 
@@ -43,7 +45,7 @@ public class GetAllClusters {
         }
 
         System.out.println("*********");
-        
+
         // Setup a reference location
         Location refLoc = new Location();
         refLoc.setLatitude(54.76);

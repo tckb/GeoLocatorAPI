@@ -30,7 +30,7 @@ public class Device {
      * @param clustID
      *     The clustID
      */
-    public void setClustID(String clustID) {
+    public void setClusterID(String clustID) {
         this.clustID = clustID;
     }
 

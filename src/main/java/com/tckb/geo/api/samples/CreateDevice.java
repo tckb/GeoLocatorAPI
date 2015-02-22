@@ -12,7 +12,6 @@ import com.tckb.geo.stubs.Location;
 import retrofit.client.Response;
 
 /**
- *
  * @author tckb <chandra.tungathurthi@rwth-aachen.de>
  */
 public class CreateDevice {
@@ -23,26 +22,29 @@ public class CreateDevice {
     /**
      * @param args the command line arguments
      */
+
     public static void main(String[] args) {
 
         // create  device
-        Device d = new Device();
-        d.setDevID("dev-1");
-        d.setName("RESTApiSampledev-1");
-        d.setClustID("cluster1");
-        d.setWeight(1.0);
+        Device device = new Device();
+        device.setDevID("dev-1");
+        device.setName("RESTApiSampledev-1");
+        device.setClusterID("cluster1");
+
+        //TODO: Intended for future suignal accuracy feature implementation
+        device.setWeight(1.0);
         // Setup location of the device
-        Location devLoc = new Location();
-        devLoc.setLatitude(54.76);
-        devLoc.setLongitude(-34.44);
+        Location location = new Location();
+        location.setLatitude(54.76);
+        location.setLongitude(-34.44);
         // set device location
-        d.setLocation(devLoc);
+        device.setLocation(location);
 
         // Now register the device with the server
-        Response r = service.registerDevice(d);
+        Response response = service.registerDevice(device);
 
         // Check if device is successfully registered
-        if (r.getStatus() == 200) {
+        if (response.getStatus() == 200) {
             System.out.println("Device registered successfully!");
         } else {
             System.out.println("Device register failed! ");
